@@ -1,0 +1,13 @@
+<h1 class="mt-1 pt-1 text-capitalize text-center">Product List</h1>
+<div
+  class="container row row-cols-1 row-cols-md-3 g-4  mt-3 m-auto"
+>
+  @for (product of products; track product.id) {
+  <div class="col">
+    <app-product-cart [product]="product"></app-product-cart>
+  </div>
+  } @empty {
+  <p>Data not found</p>
+  }
+</div>
+<app-footer></app-footer>

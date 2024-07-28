@@ -1,0 +1,68 @@
+<!-- <div class="card bg-body-secondary">
+  <img [src]="product.images" class="card-img-top" alt="..." />
+  <div class="card-body border-1 border-danger">
+    <h3 class="card-title">
+      {{ product.title }}
+    </h3>
+
+    <h4 class="card-text text-danger">
+      {{ product.category }}
+    </h4>
+    <h5 class="card-text text-info">
+      {{ product.rating }}
+    </h5>
+    <h5 class="card-text text-dark">
+      {{ product.brand }}
+    </h5>
+    <i
+      class="fas fa-star"
+      [ngClass]="
+        product.availabilityStatus === 'In Stock'
+          ? 'text-success'
+          : 'text-danger'
+      "
+    ></i>
+    <h5 class="card-text text-dark">{{ product.price }} $</h5>
+    <div class="d-flex justify-content-around">
+      <a href="#" class="btn btn-outline-success">Add To Chart</a>
+      <a href="#" class="btn btn-outline-info">DETAILS</a>
+    </div>
+  </div>
+</div> -->
+<div class="card">
+  @if(product.stock >0 ){
+  <span class="badge text-bg-success text-capitalize fw-bolder w-25 mx-3 my-2"
+    >in stock</span
+  >
+  } @else {
+  <span
+    class="badge text-bg-danger text-capitalize fw-bolder d-flex w-25 mx-3 my-2"
+    >out stock</span
+  >}
+  <img [src]="product.thumbnail" class="card-img-top" alt="Product Image" />
+  <div class="card-body">
+    <h3 class="card-title">{{ product.title }}</h3>
+    <h4 class="card-text text-danger">{{ product.category }}</h4>
+    <ng-container *ngFor="let star of stars; let i = index">
+      <i
+        class="fa"
+        [ngClass]="
+          i < roundedRating
+            ? 'fa-light fa-star text-success'
+            : 'fa-light fa-star text-muted'
+        "
+      ></i>
+    </ng-container>
+    <h5 class="card-text text-dark">{{ product.brand }}</h5>
+
+    <h5 class="card-text price">{{ product.price }} $</h5>
+    <div class="d-flex justify-content-around">
+      <a href="#" class="btn btn-outline-success">Add To Cart</a>
+      <a
+        class="btn btn-outline-info"
+        [routerLink]="['/productDetails', product.id]"
+        >Details</a
+      >
+    </div>
+  </div>
+</div>

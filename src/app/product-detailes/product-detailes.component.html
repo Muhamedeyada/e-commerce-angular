@@ -1,0 +1,62 @@
+<div class="container mt-4">
+  <div class="card mb-3" style="max-width: 840px">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img
+          [src]="productsObj.thumbnail"
+          class="card-img-top"
+          alt="Product Image"
+        />
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ productsObj.title }}</h5>
+          <p class="card-text">
+            <small class="text-muted">Brand: {{ productsObj.brand }}</small>
+          </p>
+          <p class="card-text">
+            <strong>Price: ${{ productsObj.price }}</strong>
+          </p>
+          <div *ngIf="productsObj.stock > 0; else outOfStock">
+            <span class="badge bg-success text-capitalize fw-bolder mb-3"
+              >in stock</span
+            >
+            <div class="d-flex align-items-center mb-3">
+              <button
+                class="btn btn-outline-secondary"
+                (click)="decreaseQuantity()"
+              >
+                -
+              </button>
+              <input
+                type="number"
+                class="form-control mx-2 text-center"
+                style="width: 60px"
+                min="1"
+                [max]="productsObj.stock"
+              />
+              <button
+                class="btn btn-outline-secondary"
+                (click)="increaseQuantity()"
+              >
+                +
+              </button>
+            </div>
+            <button class="btn btn-outline-success" (click)="addToCart()">
+              Add To Cart
+            </button>
+          </div>
+          <button class="btn btn-outline-success" (click)="addToCart()">
+            Buy Now
+          </button>
+        </div>
+        <ng-template #outOfStock>
+          <span class="badge bg-danger text-capitalize fw-bolder mb-3"
+            >out of stock</span
+          >
+        </ng-template>
+        <p class="card-text mt-3">{{ productsObj.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

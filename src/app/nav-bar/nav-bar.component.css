@@ -1,0 +1,21 @@
+.navbar {
+  background-color: #f8f9fa; /* Example background color */
+}
+.nav-link {
+  color: #555;
+}
+.nav-link:hover {
+  color: #000;
+}
+.nav-item.active .nav-link,
+.nav-link.active {
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 5px;
+}
+.social-icons a {
+  color: #555;
+}
+.social-icons a:hover {
+  color: #000;
+}

@@ -7,11 +7,16 @@ import { LoginComponent } from './login/login.component';
 import { ResgisterComponent } from './resgister/resgister.component';
 import { ProductCartComponent } from './product-cart/product-cart.component';
 import { ProductDetailesComponent } from './product-detailes/product-detailes.component';
+import { CartComponent } from './cart/cart.component';
+import { CartProductComponent } from './cart-product/cart-product.component';
 export const routes: Routes = [
   { path: 'home', component: HomeComponent, title: 'HOME' },
   { path: 'login', component: LoginComponent, title: 'LOGIN ' },
   { path: 'register', component: ResgisterComponent, title: 'RESGITER' },
   { path: 'product', component: ProductCartComponent, title: 'PRODUCT' },
+  { path: 'cart', component: CartComponent, title: 'CART' },
+  { path: 'cartProduct', component: CartProductComponent, title: 'CARTPRODUCT' },
+
   {
     path: 'productDetails/:id',
     component: ProductDetailesComponent,

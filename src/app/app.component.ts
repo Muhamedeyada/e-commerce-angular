@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 
 import { RouterOutlet } from '@angular/router';
@@ -9,6 +8,8 @@ import { ProductCartComponent } from './product-cart/product-cart.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductDetailesComponent } from './product-detailes/product-detailes.component';
+import { CartComponent } from './cart/cart.component';
+import { CartProductComponent } from './cart-product/cart-product.component';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,9 @@ import { ProductDetailesComponent } from './product-detailes/product-detailes.co
     ProductCartComponent,
     HomeComponent,
     FooterComponent,
-    ProductDetailesComponent
+    ProductDetailesComponent,
+    CartComponent,
+    CartProductComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

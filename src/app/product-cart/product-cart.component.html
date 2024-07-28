@@ -57,7 +57,9 @@
 
     <h5 class="card-text price">{{ product.price }} $</h5>
     <div class="d-flex justify-content-around">
-      <a href="#" class="btn btn-outline-success">Add To Cart</a>
+      <a [routerLink]="['/cart', product.id]" class="btn btn-outline-success"
+        >Add To Cart</a
+      >
       <a
         class="btn btn-outline-info"
         [routerLink]="['/productDetails', product.id]"

@@ -1,9 +1,9 @@
-<nav class="navbar navbar-expand-lg fs-5 bg-body-tertiary">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a
       class="navbar-brand fs-2"
       routerLinkActive="text-danger"
-      routerLink="home"
+      routerLink="/home"
       [routerLinkActiveOptions]="{ exact: true }"
       >El3yoda Shop</a
     >
@@ -19,17 +19,17 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a
             class="nav-link"
             routerLinkActive="text-danger"
-            routerLink="productDetails"
+            routerLink="/productDetails"
             >GAME DETAILS</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="text-danger" routerLink="login"
+          <a class="nav-link" routerLinkActive="text-danger" routerLink="/login"
             >Login</a
           >
         </li>
@@ -37,22 +37,30 @@
           <a
             class="nav-link"
             routerLinkActive="text-danger"
-            routerLink="register"
+            routerLink="/register"
             >Register</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="text-danger" routerLink="cart">
+          <a class="nav-link" routerLinkActive="text-danger" routerLink="/cart">
             <i class="fas fa-shopping-cart"></i> Cart
           </a>
         </li>
       </ul>
-      <div class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <div class="social-icons text-dark">
-          <a href="#"><i class="fab fa-facebook-f mx-1"></i></a>
-          <a href="#"><i class="fab fa-twitter mx-1"></i></a>
-          <a href="#"><i class="fab fa-instagram mx-1"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in mx-1"></i></a>
+      <div class="d-flex align-items-center">
+        <div class="social-icons d-flex">
+          <a href="#" class="text-dark mx-2" aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" class="text-dark mx-2" aria-label="Twitter"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="#" class="text-dark mx-2" aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" class="text-dark mx-2" aria-label="LinkedIn"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
         </div>
       </div>
     </div>

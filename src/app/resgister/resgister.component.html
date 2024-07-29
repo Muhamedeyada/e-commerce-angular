@@ -1,109 +1,128 @@
-<div class="container">
-  <h2 class="text-center">Register</h2>
-  <form [formGroup]="register" (ngSubmit)="handelsubmitform()">
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input
-        type="text"
-        class="form-control"
-        id="name"
-        placeholder="Enter your name"
-        formControlName="name"
-      />
-      @if (name?.touched && name?.invalid){
-      <div class="form-text text-danger">
-        @if (name?.errors?.["required"]) {
-        <small>Required</small>
-        }
-      </div>
-      }
-    </div>
-    <div class="form-group my-1">
-      <label for="username">Username</label>
-      <input
-        type="text"
-        class="form-control"
-        id="username"
-        placeholder="Enter a username"
-        formControlName="username"
-      />
-      @if (username?.touched && username?.invalid){
-      <div class="form-text text-danger">
-        @if (username?.errors?.["required"]) {
-        <small>Required</small>
-        } @if (username?.errors?.["pattern"]) {
-        <small>enter valid username</small>
-        }
-      </div>
-      }
-    </div>
-    <div class="form-group my-1">
-      <label for="email">Email address</label>
-      <input
-        type="email"
-        class="form-control"
-        id="email"
-        aria-describedby="emailHelp"
-        placeholder="Enter email"
-        formControlName="email"
-      />
-      @if (email?.touched && email?.invalid){
-      <div class="form-text text-danger">
-        @if (email?.errors?.["required"]) {
-        <small>Required</small>
-        } @if (email?.errors?.["email"]) {
-        <small>enter valid email</small>
-        }
-      </div>
-      }
-    </div>
-    <div class="form-group my-1">
-      <label for="password">Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="password"
-        placeholder="Password"
-        formControlName="password"
-      />
-      @if (password?.touched && password?.invalid){
-      <div class="form-text text-danger">
-        @if (password?.errors?.["required"]) {
-        <small>Required</small>
-        } @if (password?.errors?.["pattern"]) {
-        <small>enter valid password</small>
-        }
-      </div>
-      }
-    </div>
-    <div class="form-group my-1">
-      <label for="repassword">Confirm Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="repassword"
-        placeholder="Confirm Password"
-        formControlName="repassword"
-      />
-      @if (repassword?.touched && repassword?.invalid){
-      <div class="form-text text-danger">
-        @if (repassword?.errors?.["required"]) {
-        <small>Required</small>
-        } @if (register.errors?.["passwordsMismatch"]) {
-        <small>enter match password</small>
-        }
-      </div>
-      }
-    </div>
-    <button
-      type="submit"
-      class="btn btn-primary m-2 btn-block"
-      [disabled]="register.invalid"
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Register</h2>
+  <div class="row">
+    <div
+      class="col-md-6 d-flex justify-content-center align-items-center mb-4 mb-md-0"
     >
-      Register
-    </button>
-  </form>
-  <div class="text-center mt-3">
-    <a routerLink="/login">Already have an account? Login here</a>
+      <img src="/login.png" alt="signUp" class="img-fluid rounded shadow" />
+    </div>
+
+    <div class="col-md-6">
+      <form [formGroup]="register" (ngSubmit)="handelsubmitform()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            placeholder="Enter your name"
+            formControlName="name"
+          />
+          <div
+            *ngIf="name?.touched && name?.invalid"
+            class="form-text text-danger"
+          >
+            <div *ngIf="name?.errors?.['required']">
+              <small>Required</small>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            placeholder="Enter a username"
+            formControlName="username"
+          />
+          <div
+            *ngIf="username?.touched && username?.invalid"
+            class="form-text text-danger"
+          >
+            <div *ngIf="username?.errors?.['required']">
+              <small>Required</small>
+            </div>
+            <div *ngIf="username?.errors?.['pattern']">
+              <small>Enter a valid username</small>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+            formControlName="email"
+          />
+          <div
+            *ngIf="email?.touched && email?.invalid"
+            class="form-text text-danger"
+          >
+            <div *ngIf="email?.errors?.['required']">
+              <small>Required</small>
+            </div>
+            <div *ngIf="email?.errors?.['email']">
+              <small>Enter a valid email</small>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+          <div
+            *ngIf="password?.touched && password?.invalid"
+            class="form-text text-danger"
+          >
+            <div *ngIf="password?.errors?.['required']">
+              <small>Required</small>
+            </div>
+            <div *ngIf="password?.errors?.['pattern']">
+              <small>Enter a valid password</small>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="repassword" class="form-label">Confirm Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="repassword"
+            placeholder="Confirm Password"
+            formControlName="repassword"
+          />
+          <div
+            *ngIf="repassword?.touched && repassword?.invalid"
+            class="form-text text-danger"
+          >
+            <div *ngIf="repassword?.errors?.['required']">
+              <small>Required</small>
+            </div>
+            <div *ngIf="register.errors?.['passwordsMismatch']">
+              <small>Passwords must match</small>
+            </div>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary w-100"
+          [disabled]="register.invalid"
+        >
+          Register
+        </button>
+      </form>
+      <div class="text-center mt-3">
+        <a routerLink="/login">Already have an account? Login here</a>
+      </div>
+    </div>
   </div>
 </div>

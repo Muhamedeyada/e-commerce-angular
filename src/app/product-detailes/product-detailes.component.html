@@ -35,34 +35,18 @@
             <span class="badge bg-success text-capitalize fw-bolder mb-3"
               >in stock</span
             >
-            <div class="d-flex align-items-center mb-3">
-              <button
-                class="btn btn-outline-secondary"
-                (click)="decreaseQuantity()"
-              >
-                -
-              </button>
-              <input
-                type="number"
-                class="form-control mx-2 text-center"
-                style="width: 60px"
-                min="1"
-                [max]="productsObj.stock"
-                [value]="quantity"
-                (input)="onQuantityChange($event)"
-              />
-              <button
-                class="btn btn-outline-secondary"
-                (click)="increaseQuantity()"
-              >
-                +
-              </button>
-            </div>
-            <button class="btn btn-outline-success" (click)="addToCart()">
+            <div class="d-flex align-items-center mb-3"></div>
+            <button
+              class="btn btn-outline-success"
+              (click)="addToCart(productsObj)"
+            >
               Add To Cart
             </button>
           </div>
-          <button class="btn btn-outline-success" (click)="addToCart()">
+          <button
+            class="btn btn-outline-success"
+            (click)="addToCart(productsObj)"
+          >
             Buy Now
           </button>
         </div>

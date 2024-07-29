@@ -1,29 +1,54 @@
 <div class="row align-items-center">
-  <div class="col-5 text-center d-flex align-items-center">
+  <div class="col-4 text-center d-flex align-items-center">
     <div class="bg-secondary-subtle rounded-3">
-      <img src="../../assets/1.png" alt="" />
+      <img [src]="item.thumbnail" alt="" />
     </div>
     <div class="ms-3 text-start">
-      <h5>title</h5>
-      <p>product code:</p>
+      <h5>{{ item.title }}</h5>
+      <p>product code:{{ item.sku }}</p>
     </div>
   </div>
   <div class="offset-2 col-3 text-center">
     <div class="d-flex justify-content-center align-items-center">
-      <button type="button" class="btn btn-success fw-bold btn-lg">+</button>
-      <p class="px-3 fw-bold mt-3 fs-4">5</p>
-      <button type="button" class="btn btn-outline-secondary py-2 btn-lg">
+      <button
+        (click)="updateQuantity(item.id, item.quantity + 1)"
+        type="button"
+        class="btn btn-success fw-bold btn-lg rounded-circle"
+        style="width: 50px; height: 50px; font-size: 1.5rem; line-height: 1"
+      >
+        +
+      </button>
+      <p
+        class="px-3 fw-bold fs-4 text-center"
+        style="min-width: 50px; margin: 0"
+      >
+        {{ item.quantity }}
+      </p>
+      <button
+        (click)="updateQuantity(item.id, item.quantity - 1)"
+        type="button"
+        class="btn btn-outline-secondary fw-bold btn-lg rounded-circle"
+        [disabled]="item.quantity <= 1"
+        style="width: 50px; height: 50px; font-size: 1.5rem; line-height: 1"
+      >
         -
       </button>
     </div>
   </div>
   <div class="col-1 text-center">
-    <button class="btn btn-outline-secondary border rounded-0" type="submit">
-      x
+    <button
+      (click)="removeFromCart(item.id)"
+      class="btn btn-outline-secondary border rounded-0"
+      type="button"
+    >
+      Delete
     </button>
   </div>
-  <div class="col-1 bg text-center">
-    <h5>$price</h5>
+  <div class="col-1 text-center">
+    <h5 class="m-0">${{ item.price }}</h5>
+  </div>
+  <div class="col-1 text-center">
+    <h5 class="m-0">${{ item.price * item.quantity }}</h5>
   </div>
 </div>
 <hr />

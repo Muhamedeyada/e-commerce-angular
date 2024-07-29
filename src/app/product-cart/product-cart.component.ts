@@ -1,3 +1,4 @@
+import { CartServiceService } from './../services/cart-service.service';
 import { NgClass, NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
@@ -12,7 +13,15 @@ import { Router } from '@angular/router';
 })
 export class ProductCartComponent {
   @Input() product: any;
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private cardservice: CartServiceService
+  ) {}
+
+  addToCart(productFromHtml: any) {
+    this.cardservice.addToCart(productFromHtml);
+  }
+
   handleRedirect(id: any) {
     this.router.navigate(['./productDetails ', id]);
   }

@@ -3,6 +3,7 @@ import { ProductRequestsService } from '../services/product-requests.service';
 import { NgFor, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CartServiceService } from '../services/cart-service.service';
 
 @Component({
   selector: 'app-product-detailes',
@@ -15,10 +16,13 @@ export class ProductDetailesComponent {
   id: number = 0;
   products: Array<any> = [];
   productsObj: any;
+  quantity = 1;
+
   stars = [1, 2, 3, 4, 5];
   constructor(
     private ProductRequestsService: ProductRequestsService,
-    private activeLink: ActivatedRoute
+    private activeLink: ActivatedRoute,
+    private cardservice: CartServiceService
   ) {}
   ngOnInit() {
     this.id = this.activeLink.snapshot.params['id'];
@@ -28,7 +32,6 @@ export class ProductDetailesComponent {
       }
     );
   }
-  quantity = 1;
 
   increaseQuantity() {
     if (this.quantity < this.productsObj.stock) {
@@ -53,10 +56,7 @@ export class ProductDetailesComponent {
     this.quantity = value;
   }
 
-  addToCart() {
-    // Your logic to add the product to the cart
-    console.log(
-      `Added ${this.quantity} of ${this.productsObj.title} to the cart.`
-    );
+  addToCart(productFromHtml: any) {
+    this.cardservice.addToCart(productFromHtml);
   }
 }

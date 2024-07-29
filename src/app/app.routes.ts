@@ -8,14 +8,18 @@ import { ResgisterComponent } from './resgister/resgister.component';
 import { ProductCartComponent } from './product-cart/product-cart.component';
 import { ProductDetailesComponent } from './product-detailes/product-detailes.component';
 import { CartComponent } from './cart/cart.component';
-import { CartProductComponent } from './cart-product/cart-product.component';
+import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 export const routes: Routes = [
   { path: 'home', component: HomeComponent, title: 'HOME' },
   { path: 'login', component: LoginComponent, title: 'LOGIN ' },
   { path: 'register', component: ResgisterComponent, title: 'RESGITER' },
   { path: 'product', component: ProductCartComponent, title: 'PRODUCT' },
   { path: 'cart', component: CartComponent, title: 'CART' },
-  { path: 'cartProduct', component: CartProductComponent, title: 'CARTPRODUCT' },
+  {
+    path: 'addToCartProduct',
+    component: AddToCartComponent,
+    title: 'ADDTOCARTPRODUCT',
+  },
 
   {
     path: 'productDetails/:id',

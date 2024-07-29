@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductDetailesComponent } from './product-detailes/product-detailes.component';
 import { CartComponent } from './cart/cart.component';
-import { CartProductComponent } from './cart-product/cart-product.component';
+import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +24,7 @@ import { CartProductComponent } from './cart-product/cart-product.component';
     FooterComponent,
     ProductDetailesComponent,
     CartComponent,
-    CartProductComponent,
+    AddToCartComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

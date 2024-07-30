@@ -1,14 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg fw-bold bg-light">
+  <div class="container-fluid row">
     <a
-      class="navbar-brand fs-2"
-      routerLinkActive="text-danger"
+      class="navbar-brand fs-2 col-8"
+      routerLinkActive="text-secondary"
       routerLink="/home"
       [routerLinkActiveOptions]="{ exact: true }"
-      >El3yoda Shop</a
     >
+      Yalla Deals
+    </a>
     <button
-      class="navbar-toggler"
+      class="navbar-toggler col-3"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarNav"
@@ -18,51 +19,34 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse col-3" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a
             class="nav-link"
-            routerLinkActive="text-danger"
-            routerLink="/productDetails"
-            >GAME DETAILS</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLinkActive="text-danger" routerLink="/login"
+            routerLinkActive="text-secondary"
+            routerLink="/login"
             >Login</a
           >
         </li>
         <li class="nav-item">
           <a
             class="nav-link"
-            routerLinkActive="text-danger"
+            routerLinkActive="text-secondary"
             routerLink="/register"
             >Register</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="text-danger" routerLink="/cart">
+          <a
+            class="nav-link"
+            routerLinkActive="text-secondary"
+            routerLink="/cart"
+          >
             <i class="fas fa-shopping-cart"></i> Cart
           </a>
         </li>
       </ul>
-      <div class="d-flex align-items-center">
-        <div class="social-icons d-flex">
-          <a href="#" class="text-dark mx-2" aria-label="Facebook"
-            ><i class="fab fa-facebook-f"></i
-          ></a>
-          <a href="#" class="text-dark mx-2" aria-label="Twitter"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a href="#" class="text-dark mx-2" aria-label="Instagram"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a href="#" class="text-dark mx-2" aria-label="LinkedIn"
-            ><i class="fab fa-linkedin-in"></i
-          ></a>
-        </div>
-      </div>
     </div>
   </div>
 </nav>

@@ -1,0 +1,20 @@
+.container {
+  max-width: 100%;
+}
+
+h1,
+h4,
+h5,
+p {
+  margin: 0;
+}
+
+@media (max-width: 576px) {
+  .row > [class*="col-"] {
+    padding: 0.5rem;
+  }
+
+  .text-center {
+    text-align: center; 
+  }
+}

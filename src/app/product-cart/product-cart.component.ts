@@ -30,4 +30,7 @@ export class ProductCartComponent {
   ngOnInit() {
     this.roundedRating = Math.round(this.product.rating);
   }
+  get discountedPrice(): number {
+    return this.product.price * (1 - this.product.discountPercentage / 100);
+  }
 }
